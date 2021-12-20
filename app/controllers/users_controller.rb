@@ -6,7 +6,7 @@ class UsersController < SecuredController
     users = User.all
     render json: users
   end
-  
+
   # GET /users/1
   def show
     user = User.find_by(name: params[:id])
@@ -29,7 +29,8 @@ class UsersController < SecuredController
   end
 
   private
-    def user_params
-      params.permit(:user_sub, :email)
-    end
+
+  def user_params
+    params.permit(:user_sub, :email)
+  end
 end

@@ -1,6 +1,5 @@
 class LaptopsController < SecuredController
-    skip_before_action :authorize_request, only: %i[index show]
-
+  skip_before_action :authorize_request, only: %i[index show]
 
   # GET /laptops
   def index
@@ -19,7 +18,7 @@ class LaptopsController < SecuredController
 
   # POST /laptops
   def create
-    laptop =  Laptop.create!(laptop_params)
+    laptop = Laptop.create!(laptop_params)
     render json: laptop, status: :created
   end
 
@@ -40,13 +39,14 @@ class LaptopsController < SecuredController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_laptop
-      @laptop = Laptop.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def laptop_params
-      params.require(:laptop).permit(:name, :model, :slug )
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_laptop
+    @laptop = Laptop.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def laptop_params
+    params.require(:laptop).permit(:name, :model, :slug)
+  end
 end
