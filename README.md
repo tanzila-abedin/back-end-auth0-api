@@ -13,7 +13,7 @@ This project will be submitted as part of my final Microverse Capstone project. 
 Clone the project
 
 ```bash
-  git clone 
+  git clone  https://github.com/tanzila-abedin/back-end-auth0-api.git
 ```
 
 Go to the project directory
