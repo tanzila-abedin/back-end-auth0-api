@@ -19,14 +19,6 @@ class ReviewsController < SecuredController
     head :not_found
   end
 
-  # def userReviews
-  #   fab =  User.find_by(user_sub: params[:user_sub])
-  #   review = fab.reviews
-  #   render json: review
-  # rescue ActiveRecord::RecordNotFound
-  #   head :not_found
-  # end
-
   # POST /reviews
   def create
     fab = User.find_by(user_sub: params[:user_sub])
@@ -38,15 +30,6 @@ class ReviewsController < SecuredController
     render json: review, status: :created
   end
 
-  # PATCH/PUT /reviews/1
-  # def update
-  #   if @review.update(review_params)
-  #     render json: @review
-  #   else
-  #     render json: @review.errors, status: :unprocessable_entity
-  #   end
-  # end
-
   # DELETE /reviews/1
   def destroy
     review = Review.find(params[:id])
@@ -54,14 +37,4 @@ class ReviewsController < SecuredController
     # head :no_contentrev
     render json: review
   end
-
-  # Use callbacks to share common setup or constraints between actions.
-  # def set_review
-  #   @review = Review.find(params[:id])
-  # end
-
-  # Only allow a list of trusted parameters through.
-  # def review_params
-  #   params.permit(:title, :description, :rating, :user_id, :laptop_id)
-  # end
 end
