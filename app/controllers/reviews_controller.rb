@@ -17,12 +17,8 @@ class ReviewsController < SecuredController
 
   # POST /reviews
   def create
-    fab = User.find_by(user_sub: params[:user_sub])
-    review = Review.create!(user_email: params[:user_email],
-                            laptop_model: params[:laptop_model],
-                            title: params[:title], description: params[:description],
-                            rating: params[:rating], user_id: fab.id,
-                            laptop_id: params[:laptop_id])
+    review = Review.create!(review_params)
+
     render json: review, status: :created
   end
 
@@ -31,5 +27,13 @@ class ReviewsController < SecuredController
     review = Review.find(params[:id])
     review.delete
     render json: review
+  end
+  private 
+
+  def review_params
+    reviews = params.permit(:user_email, :laptop_model, :title, :description, :rating, :user_id, :laptop_id)
+        fab = User.find_by(user_sub: params[:user_sub])
+    reviews[:user_id] = fab.id
+    reviews
   end
 end
