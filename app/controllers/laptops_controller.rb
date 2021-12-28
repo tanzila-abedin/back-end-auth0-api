@@ -22,9 +22,4 @@ class LaptopsController < SecuredController
   def set_laptop
     @laptop = Laptop.find(params[:id])
   end
-
-  # Only allow a list of trusted parameters through.
-  def laptop_params
-    params.require(:laptop).permit(:name, :model, :slug)
-  end
 end
