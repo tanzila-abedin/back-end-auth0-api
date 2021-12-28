@@ -7,16 +7,12 @@ class ReviewsController < SecuredController
     fab = User.find_by(user_sub: user_sub)
     review = fab.reviews
     render json: review
-  rescue ActiveRecord::RecordNotFound
-    head :not_found
   end
 
   # GET /reviews/1
   def show
     review = Review.where(laptop_id: params[:id])
     render json: review
-  rescue ActiveRecord::RecordNotFound
-    head :not_found
   end
 
   # POST /reviews
@@ -34,7 +30,6 @@ class ReviewsController < SecuredController
   def destroy
     review = Review.find(params[:id])
     review.delete
-    # head :no_contentrev
     render json: review
   end
 end
