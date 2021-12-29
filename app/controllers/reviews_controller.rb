@@ -28,11 +28,12 @@ class ReviewsController < SecuredController
     review.delete
     render json: review
   end
-  private 
+
+  private
 
   def review_params
     reviews = params.permit(:user_email, :laptop_model, :title, :description, :rating, :user_id, :laptop_id)
-        fab = User.find_by(user_sub: params[:user_sub])
+    fab = User.find_by(user_sub: params[:user_sub])
     reviews[:user_id] = fab.id
     reviews
   end
