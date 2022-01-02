@@ -1,24 +1,45 @@
-# README
+# Back-end Final Microverse Capstone : DEVLAPS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project will be submitted as part of my final Microverse Capstone project. It is an API built using Ruby on Rails that will allow users to view information on Laptops and Leave their reviews for laptops.
 
-Things you may want to cover:
+[Click here to view the frontend repo](https://github.com/tanzila-abedin/front-end-final-capstone.git)
 
-* Ruby version
+## Technologies Used
+- Ruby on Rails
+- PostgreSQL
 
-* System dependencies
+## Run Locally
 
-* Configuration
+Clone the project
 
-* Database creation
+```bash
+  git clone  https://github.com/tanzila-abedin/back-end-auth0-api.git
+```
 
-* Database initialization
+Go to the project directory
 
-* How to run the test suite
+```bash
+  cd my-project
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Install dependencies
 
-* Deployment instructions
+```bash
+  bundle
+```
 
-* ...
+Start the server
+
+```bash
+  rails s
+```
+
+👤 **Tanzila**
+
+![Tanzila's GitHub stats](https://github-readme-stats.vercel.app/api?username=tanzila-abedin&count_private=true&theme=dark&show_icons=true)
+
+- GitHub: [@githubhandle](https://github.com/tanzila-abedin)
+- Twitter: [@twitterhandle](https://twitter.com/TanzilaAbedin)
+
+## Show your support
+Give a ⭐️ if you like this project!
