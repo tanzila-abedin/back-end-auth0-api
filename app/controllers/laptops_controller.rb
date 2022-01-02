@@ -16,10 +16,4 @@ class LaptopsController < SecuredController
     head :not_found
   end
 
-  private
-
-  # Use callbacks to share common setup or constraints between actions.
-  def set_laptop
-    @laptop = Laptop.find(params[:id])
-  end
 end
